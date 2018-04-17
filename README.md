@@ -41,7 +41,7 @@ Vulnerability #2: __________________
 
 1. Before the attack this is the user data stored by the site.  
   ![csrf-1](./red/csrf/csrf-1.gif)
-2. A logged on user loads a malicious page carefully crafted by an attacker. After the attack, the name and last name of first user is modified.  
+2. A logged on user loads a [malicious page](./red/csrf/index.html) carefully crafted by an attacker. After the attack, the name and last name of first user is modified.  
   ![csrf-2](./red/csrf/csrf-2.gif)
 
 <br>

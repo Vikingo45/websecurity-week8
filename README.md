@@ -37,7 +37,14 @@ Vulnerability #2: __________________
 
 ## Red
 
-Vulnerability #1: __________________
+**Vulnerability #1:** Cross-Site Request Forgery (CSRF)
+
+1. Before the attack this is the user data stored by the site.  
+  ![csrf-1](./red/csrf/csrf-1.gif)
+2. A logged on user loads a malicious page carefully crafted by an attacker. After the attack, the name and last name of first user is modified.  
+  ![csrf-2](./red/csrf/csrf-2.gif)
+
+<br>
 
 Vulnerability #2: __________________
 

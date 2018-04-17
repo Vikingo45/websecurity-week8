@@ -23,7 +23,14 @@ Vulnerability #2: __________________
 
 ## Green
 
-Vulnerability #1: __________________
+**Vulnerability #1:** Stored Cross-Site Scripting (XSS)
+
+1. An attacker injects script as a feedback comment in the *Contact Us* form.
+  ![xss-1.gif](./green/xss/xss-1.gif)
+  <br>
+2. When a logged on user loads the feedback page, the script is executed.
+  ![xss-2.gif](./green/xss/xss-2.gif)
+
 
 Vulnerability #2: __________________
 

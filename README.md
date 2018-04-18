@@ -16,9 +16,18 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 
 ## Blue
 
-Vulnerability #1: __________________
+**Vulnerability #1:** Session Hijacking
 
-Vulnerability #2: __________________
+1. An attacker can obtain the session id of a logged on user by many means (XSS or sniffing WiFi packets, for example). Here, we use Burp to get the user's PHPSESSID. 
+  ![sh-1](./blue/session-hijacking/sh-1.gif) 
+2. Then, the attacker can use cURL from the command line to forge a GET request with such session id. Here, the command ```curl --insecure --cookie "PHPSESSID=6f4i5sk14cdrjtotdvdu8lmjd5" --request GET https://35.226.155.72/blue/public/staff/index.php``` is issued.   
+  ![sh-2](./blue/session-hijacking/sh-2.gif)
+3. The same attacker could also use its browser to request access to the user’s page. Google Chrome allows to change a page’s cookies through the console. Below, the command ```document.cookie="PHPSESSID=6f4i5sk14cdrjtotdvdu8lmjd5"``` is typed in the console.  
+  ![sh-3](./blue/session-hijacking/sh-3.gif)
+
+<br>
+
+**Vulnerability #2:** 
 
 
 ## Green
@@ -32,7 +41,7 @@ Vulnerability #2: __________________
 
 <br>
 
-Vulnerability #2: __________________
+**Vulnerability #2:** 
 
 
 ## Red
@@ -46,7 +55,7 @@ Vulnerability #2: __________________
 
 <br>
 
-Vulnerability #2: __________________
+**Vulnerability #2:**
 
 
 ## Notes

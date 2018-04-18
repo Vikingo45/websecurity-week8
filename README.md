@@ -14,6 +14,8 @@ The six possible exploits are:
 
 Each version of the site has been given two of the six vulnerabilities. (In other words, all six of the exploits should be assignable to one of the sites.)
 
+
+
 ## Blue
 
 **Vulnerability #1:** Session Hijacking
@@ -27,9 +29,13 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 
 <br>
 
-**Vulnerability #2:** 
+**Vulnerability #2:** SQL Injection (SQLi)
+
+The site's ```/blue/public/salesperson.php``` page is vulnerable to SQL injection via the ```id``` parameter. This vulnerability was discovered with sqlmap. The exact command typed below is ```sqlmap -u https://35.226.155.72/blue/public/salesperson.php\?id\=1 --dbs --threads=1 --random-agent --no-cast```. 
+![sqli](./blue/sqli/sqli.gif)
 
 
+ 
 ## Green
 
 **Vulnerability #1:** Stored Cross-Site Scripting (XSS)
@@ -42,6 +48,7 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 <br>
 
 **Vulnerability #2:** 
+
 
 
 ## Red

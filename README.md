@@ -31,7 +31,7 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 
 **Vulnerability #2:** SQL Injection (SQLi)
 
-The site's ```/blue/public/salesperson.php``` page is vulnerable to SQL injection via the ```id``` parameter. This vulnerability was discovered with sqlmap. The exact command typed below is ```sqlmap -u https://35.226.155.72/blue/public/salesperson.php\?id\=1 --dbs --threads=1 --random-agent --no-cast```. 
+The site's ```/blue/public/salesperson.php``` page is vulnerable to SQL injection via the ```id``` parameter. This vulnerability was discovered with sqlmap. The exact command typed below is ```sqlmap -u https://35.226.155.72/blue/public/salesperson.php\?id\=1 --dbs --threads=1 --random-agent --no-cast```. In this attack, sqlmap is able to identify all available databases in the site. The complete output is saved in [log](./blue/sqli/log).   
 ![sqli](./blue/sqli/sqli.gif)
 
 
@@ -41,14 +41,17 @@ The site's ```/blue/public/salesperson.php``` page is vulnerable to SQL injectio
 **Vulnerability #1:** Stored Cross-Site Scripting (XSS)
 
 1. An attacker injects script as a feedback comment in the *Contact Us* form.  
-  ![xss-1.gif](./green/xss/xss-1.gif)
+  ![xss-1](./green/xss/xss-1.gif)
 2. When a logged on user loads the feedback page, the script is executed.  
-  ![xss-2.gif](./green/xss/xss-2.gif)
+  ![xss-2](./green/xss/xss-2.gif)
 
 <br>
 
-**Vulnerability #2:** 
+**Vulnerability #2:** Username Enumeration
 
+After failed attempts to log in, the site displays the message "Log in was unsuccessful". For registered users, this message is displayed in boldface. For nonexistent users, however, the message is displayed in regular font. This allows username enumeration. Below, usernames ```jmonroe99``` and ```pperson``` exist, while ```anonymous``` and ```randomaccount``` do not.
+![ue](./green/username-enumeration/ue.gif) 
+ 
 
 
 ## Red

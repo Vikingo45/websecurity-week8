@@ -24,7 +24,7 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
   ![sh-1](./blue/session-hijacking/sh-1.gif) 
 2. Then, the attacker can use cURL from the command line to forge a GET request with such session id. Here, the command ```curl --insecure --cookie "PHPSESSID=6f4i5sk14cdrjtotdvdu8lmjd5" --request GET https://35.226.155.72/blue/public/staff/index.php``` is issued.   
   ![sh-2](./blue/session-hijacking/sh-2.gif)
-3. The same attacker could also use its browser to request access to the user’s page. Google Chrome allows to change a page’s cookies through the console. Below, ```document.cookie="PHPSESSID=6f4i5sk14cdrjtotdvdu8lmjd5"``` is typed in the console.  
+3. The same attacker could also use its web browser to gain access to the staff area. Google Chrome allows to change a page’s cookies through the console. Below, ```document.cookie="PHPSESSID=6f4i5sk14cdrjtotdvdu8lmjd5"``` is typed in the console.  
   ![sh-3](./blue/session-hijacking/sh-3.gif)
 
 <br>
@@ -58,7 +58,7 @@ After failed attempts to log in, the site displays the message "Log in was unsuc
 
 **Vulnerability #1:** Cross-Site Request Forgery (CSRF)
 
-1. Before the attack this is the user data stored by the site.  
+1. Before the attack this is the user data stored in the site.  
   ![csrf-1](./red/csrf/csrf-1.gif)
 2. A logged on user loads a [malicious page](./red/csrf/index.html) carefully crafted by an attacker. This malicious page is hosted in a different server. After the attack, the name and last name of first user is modified.  
   ![csrf-2](./red/csrf/csrf-2.gif)
@@ -67,13 +67,13 @@ After failed attempts to log in, the site displays the message "Log in was unsuc
 
 **Vulnerability #2:** Insecure Direct Object Reference (IDOR)
 
-1. In the staff area, especifically in the Salespeople page, there is information about a salesman (Testy McTesterson) which is not shown in the public "Find a Salesperson" page.
+1. In the staff area, specifically in the Salespeople page, there is information about a salesman (Testy McTesterson) which is not shown in the public "Find a Salesperson" page.  
   ![idor-1](./red/idor/idor-1.gif)
-2. An unauthorized user can manipulate the ```id``` parameter from the salesperson.php page to disclose the private information about Testy McTesterson.
+2. An unauthorized user can manipulate the ```id``` parameter from the salesperson.php page to disclose the private information about Testy McTesterson. When the same is attempted on the blue and green pages, both sites simply reload the page rather than displaying the private information about the salesman.  
   ![idor-2](./red/idor/idor-2.gif)
 
 
 ## Notes
 
-Describe any challenges encountered while doing the work
+No significant challenges were faced while doing this exercise. However, while I was working I had to refer back to previous weeks in order to review some old attacks.  
 

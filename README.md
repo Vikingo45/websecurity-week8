@@ -1,6 +1,6 @@
 # Project 8 - Pentesting Live Targets
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 > Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
@@ -60,12 +60,17 @@ After failed attempts to log in, the site displays the message "Log in was unsuc
 
 1. Before the attack this is the user data stored by the site.  
   ![csrf-1](./red/csrf/csrf-1.gif)
-2. A logged on user loads a [malicious page](./red/csrf/index.html) carefully crafted by an attacker. After the attack, the name and last name of first user is modified.  
+2. A logged on user loads a [malicious page](./red/csrf/index.html) carefully crafted by an attacker. This malicious page is hosted in a different server. After the attack, the name and last name of first user is modified.  
   ![csrf-2](./red/csrf/csrf-2.gif)
 
 <br>
 
-**Vulnerability #2:**
+**Vulnerability #2:** Insecure Direct Object Reference (IDOR)
+
+1. In the staff area, especifically in the Salespeople page, there is information about a salesman (Testy McTesterson) which is not shown in the public "Find a Salesperson" page.
+  ![idor-1](./red/idor/idor-1.gif)
+2. An unauthorized user can manipulate the ```id``` parameter from the salesperson.php page to disclose the private information about Testy McTesterson.
+  ![idor-2](./red/idor/idor-2.gif)
 
 
 ## Notes
